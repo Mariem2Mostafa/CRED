@@ -1,0 +1,105 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+        <div class="container bg-info  rounded-4 py-4">
+            <h1 class="text-center text-white text-uppercase"> crud system</h1>
+
+            <div class="pb-2">
+                    
+                <div class="py-2">
+                    <label for="nameInput">Product Name</label>
+                    <input 
+                    type="text" 
+                    placeholder="enter product name"
+                    id="nameInput"
+                    class="form-control"
+                    oninput="nameValidation()"
+                    >
+                    
+                </div>
+                <div id="nameError" class="alert alert-danger d-none">
+                        <p>first letter must be capital followed by 3 or 8 small letters</p>
+                </div>
+                <div class="py-2">
+                    <label for="priceInput">Product Price</label>
+                    <input 
+                    type="text" 
+                    placeholder="enter product Price"
+                    id="priceInput"
+                    class="form-control"
+                    oninput="priceValidation()"
+                    >
+                </div>
+                <div id="priceError" class="alert alert-danger d-none">
+                    <p>The price ranges from 1000 to 20000.</p>
+                </div>
+                <div class="py-2">
+                    <label for="TypeInput">Product Type</label>
+                    <input 
+                    type="text" 
+                    placeholder="enter product Type"
+                    id="typeInput"
+                    class="form-control "
+                    oninput="typeValidation()"
+                    >
+                </div>
+                <div id="typeError" class="alert alert-danger d-none">
+                    <p>Product type is mobile, laptop or watch,first letter must be capital</p>
+                </div>
+                <div class="py-2">
+                    <label for="descInput">Product Description</label>
+                    <textarea 
+                    type="text" 
+                    id="descInput"
+                    class="form-control"
+                    oninput="descValidation()"
+                    ></textarea>
+                </div>
+                    <div id="descError" class="alert alert-danger d-none">
+                        <p>from 3 latters to 100 latters </p>
+                    </div>
+                <div class="py-2 text-center">
+                    <button id="addButton" onclick="addProduct()" class="btn bg-black w-75 rounded-5 text-white text-capitalize mx-auto ">add product</button>
+                    <button id="updateButton" onclick="updateData()" class="btn bg-black w-75 rounded-5 text-white text-capitalize mx-auto  my-2 d-none">update product</button>
+                </div>
+                <input oninput="searchProduct()" type="search" placeholder="search by name..." id="searchInput"
+                class="form-control my-3 w-50 mx-auto ">
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr class="text-capitalize text-center">
+                        <th scope="col">id</th>
+                        <th scope="col">name</th>
+                        <th scope="col">price</th>
+                        <th scope="col">type</th>
+                        <th scope="col">desc</th>
+                        <th scope="col">action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
+
+
+
